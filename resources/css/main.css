@@ -1,0 +1,470 @@
+
+/* wrappers */
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+div#wrapper {
+    max-width: 1920px;
+    background-color: white;
+}
+
+/* navigation bar */
+
+ul.nav {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    margin: 0;
+    padding: 1em;
+    font-size: 1.25em;
+    background-color: rgb(68, 87, 255);
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    display: block;
+    z-index: 1;
+}
+
+ul.nav li {
+    display: inline;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    display: inline;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+a#sign_in_button {
+    float: right;
+    margin-right: 2em
+}
+
+form#log_out_button_wrapper {
+    display: inline;
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-right: 2em;
+}
+
+button#log_out_button {
+    font-size: 0.9em;
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    background-color: rgb(68, 87, 255);
+    border: none;
+}
+
+button#log_out_button:hover {
+    cursor: pointer;
+}
+
+/* content section where user posts will appear */
+
+div#content {
+    margin: 0;
+    margin-top: 15vh;
+    padding: 1em;
+    background-color: white;
+}
+
+div#bottom_border {
+    width: 71em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    border-bottom: 2px solid rgb(68, 87, 255);
+}
+
+
+/* individual user posts */
+
+div.post {
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    width: 70em;
+    border-top: 2px solid rgb(68, 87, 255);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0em;
+    margin-bottom: 1em;
+}
+
+button.delete {
+    background-color: rgb(68, 87, 255);
+    color: white;
+    border: none;
+    font-size: 1.25em;
+    border-radius: 6px;
+    margin: 0.5em;
+    margin-bottom: 0;
+    margin-top: 0;
+    float: right;
+    display: inline;
+}
+
+button.delete:hover {
+    cursor: pointer;
+    background-color: rgb(54, 69, 197);
+}
+
+button.edit {
+    background-color: rgb(68, 87, 255);
+    color: white;
+    border: none;
+    font-size: 1.25em;
+    border-radius: 6px;
+    margin: 0.5em;
+    margin-bottom: 0;
+    margin-top: 0;
+    display: inline;
+    float: right;
+}
+
+button.edit:hover {
+    cursor: pointer;
+    background-color: rgb(54, 69, 197);
+}
+
+p.username {
+    margin: 0.3vw;
+    margin-bottom: 0.2vw;
+    font-size: 2em;
+    font-family: Arial;
+    font-weight: 600;
+    display: inline;
+    width: 3em;
+}
+
+p.text {
+    margin: 0.3vw;
+    margin-left: 2.5em;
+    padding: 0.2em;
+    height: 8vw;
+    overflow-wrap: break-word;
+    font-size: 1em;
+    font-family: Arial;
+}
+
+p.time {
+    display: inline;
+    position: absolute;
+    width: 20vw;
+    margin: 0.3vw;
+    margin-bottom: 0.5vw;
+    font-size: 1em;
+    font-family: Arial;
+}
+
+p.likes {
+    display: inline;
+    margin: 0.3vw;
+    margin-left: 1em;
+    width: 6em;
+}
+
+button.like {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-left: 63.7vw;
+    background-color: rgb(68, 87, 255);
+    border: none;
+    border-radius: 5px;
+    width: 3em;
+}
+
+button.like:hover {
+    cursor: pointer;
+    background-color: rgb(54, 69, 197);
+}
+
+/* create post page */
+
+form#create_post {
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    width: 55em;
+    height: 18em;
+    border: 2px solid rgb(68, 87, 255);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10em;
+    margin-bottom: 3em;
+    box-shadow: 0 8px 16px 0 rgba(68, 87, 255, 0.2), 0 6px 20px 0 rgba(68, 87, 255, 0.1);
+    display: block;
+}
+
+textarea {
+    height: 10em;
+    width: 50em;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    resize: none;
+    font-family: Arial;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+button#submit_post {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1.5em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 1em;
+    margin-top: 0.05em;
+    background-color: rgb(68, 87, 255);
+    border: none;
+    border-radius: 5px;
+    width: 5em;
+    float: right;
+}
+
+button#submit_post:hover {
+    cursor: pointer;
+}
+
+/* login page */
+
+form.login {
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    width: 70em;
+    height: 17em;
+    border: 2px solid rgb(68, 87, 255);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10em;
+    margin-bottom: 3em;
+    box-shadow: 0 8px 16px 0 rgba(68, 87, 255, 0.2), 0 6px 20px 0 rgba(68, 87, 255, 0.1);
+    display: block;
+}
+
+input.login_username {
+    display: block;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25em;
+}
+
+input.login_password {
+    display: block;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25em;
+}
+
+p.login_form_label {
+    display: block;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    text-align: center;
+}
+
+button.submit_login {
+    font-size: 1.25em;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+a.create_account_link {
+    font-size: 1;
+    color: rgb(33, 52, 225);
+    margin: 0.5em;
+    text-align: center;
+    display: block;
+}
+
+p#profile_page_not_logged_in {
+    font-size: 2em;
+    margin: 2em;
+    margin-top: 25vh;
+    color: black;
+    font-family: Arial;
+    display: block;
+    text-align: center;
+}
+
+
+/* pagination */
+
+button.disable {
+    display: none;
+}
+
+div.post.hidden {
+    display: none;
+}
+
+button#previous_button {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1.5em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 1em;
+    margin-top: 3em;
+    background-color: rgb(68, 87, 255);
+    border: none;
+    border-radius: 5px;
+    width: 7em;
+    float: right;
+}
+
+button#next_page_button {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1.5em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 1em;
+    margin-top: 3em;
+    background-color: rgb(68, 87, 255);
+    border: none;
+    border-radius: 5px;
+    width: 7em;
+    float: right;
+}
+
+button#previous_button.hidden:hover {
+    cursor: pointer;
+}
+
+button#next_page_button.hidden:hover {
+    cursor: pointer;
+}
+
+button#update_post_button {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1.25em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 1em;
+    background-color: rgb(68, 87, 255);
+    border: none;
+    border-radius: 5px;
+    width: 5em;
+}
+
+button#update_post_button:hover {
+    cursor: pointer;
+}
+
+/* sort by menu */
+
+form.sort {
+    margin-bottom: 1em;
+}
+
+p.sort_by {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1.5em;
+    display: block;
+    margin: 0;
+    width: 7em;
+    padding: 0.2em;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgb(68, 87, 255);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+form.sort ul {
+    list-style-type: none;
+	margin: 0;
+    text-align: center;
+    padding: 0;
+}
+
+ul.outer_list {
+    position: relative;
+    width: 7em;
+}
+
+
+ul.sort_list {
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+ul.sort_list li button {
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 1.5em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 0;
+    background-color: rgb(68, 87, 255);
+    display: block;
+    border: none;
+    width: 7em;
+}
+
+ul.outer_list li:hover ul.sort_list {
+    display: block;
+}
+
+ul.outer_list li:hover p.sort_by {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+ul.outer_list li:hover ul.sort_list li button.last_sort_button {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+ul.sort_list li button:hover{
+    background-color: rgb(54, 69, 197);
+    cursor: pointer;
+}
+
+
+
+
+
+
+

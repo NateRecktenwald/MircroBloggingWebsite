@@ -1,0 +1,18 @@
+doctype html 
+html(lang = "en")
+    head 
+        meta(charset="utf-8")
+        title Login
+        link(rel="stylesheet", href="resources/css/main.css")
+    
+    body 
+        #wrapper
+
+            include templates/navbar.pug
+
+            form.login(action="/authorize" method="POST")
+                p.login_form_label Sign In
+                input.login_username(name="login_username" placeholder="Username" value="" REQUIRED)
+                input.login_password(name="login_password" placeholder="Password" value="" REQUIRED)
+                button.submit_login(type="submit") Login
+                a.create_account_link(href="/create_account") create account

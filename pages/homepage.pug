@@ -1,0 +1,42 @@
+doctype html 
+html(lang = "en")
+    head 
+        meta(charset="utf-8")
+        title Home Page 
+        link(rel="stylesheet", href="resources/css/main.css")
+        script(src="/resources/js/pagination.js" defer)
+        script(src="/resources/js/delete.js" defer)
+        script(src="/resources/js/edit.js" defer)
+        script(src="/resources/js/like.js" defer)
+        script(src="/resources/js/time.js" defer)
+    
+    body 
+        #wrapper
+
+            if logged_in
+                include templates/signed_in_navbar.pug
+            else
+                include templates/navbar.pug
+            
+            #content
+
+                include templates/sort_by.pug
+
+
+                -let i = 0;
+                each post in posts
+                    .post(id=i) 
+                        p.username #{post.username}
+                        button.delete(id=`delete_button ${post.post} ${post.post_id}`) delete
+                        button.edit(id=`edit_button ${post.post} ${post.post_id}`) edit
+                        form(id=`wrapper ${i}` action="/api/post" method="POST")
+                            p.text #{post.content}
+                        p.time(id=`time ${post.post_id}`) #{post.post_time}
+                        button.like(id=`like_button ${post.post_id}`) Like
+                        p.likes(id=`like_text ${post.post_id}`) #{post.like_amount}
+                    -i++
+
+                button#next_page_button next
+                button#previous_button previous
+            
+            #bottom_border

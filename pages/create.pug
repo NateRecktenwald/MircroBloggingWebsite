@@ -1,0 +1,16 @@
+doctype html 
+html(lang = "en")
+    head 
+        meta(charset="utf-8")
+        title Create Post
+        link(rel="stylesheet", href="resources/css/main.css")
+    
+    body 
+        #wrapper
+
+            include templates/signed_in_navbar.pug
+
+            form(id="create_post" action="/create" method="POST") 
+                p.username #{username}
+                textarea#new_user_post(name="new_user_post" maxLength="500" placeholder="Share your thoughts!" value="" REQUIRED)
+                button#submit_post(type="submit") Post

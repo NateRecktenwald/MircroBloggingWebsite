@@ -1,0 +1,9 @@
+form.sort#sorting_form(action="/sort" method="POST")
+    ul.outer_list 
+        li 
+            p.sort_by Sort By 
+            ul.sort_list 
+                li 
+                    button(type="submit" name="input" value="recent_home") Recent
+                li 
+                    button.last_sort_button(type="submit" name="input" value="likes_home") Likes
